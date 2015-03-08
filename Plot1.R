@@ -6,10 +6,9 @@ datafordates <- powerdata[powerdata$Date=='1/2/2007'|powerdata$Date=='2/2/2007',
 globalActivePower <- as.numeric(as.character(datafordates$Global_active_power))
 
 ##Creates a histogram for the G.A.P. data
+png(filename = "Plot1.png") 
 hist(globalActivePower,breaks=12,xlab="Global Active Power (kilowatts)",
      main="Global Active Power",col=c("red"))
 
-##Saves off the histogram to a PNG file
-dev.copy(png, file = "Plot1.png") 
 dev.off()
 

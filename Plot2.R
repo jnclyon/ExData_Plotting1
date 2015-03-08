@@ -8,11 +8,10 @@ datafordates$theTime <- strptime(datafordates$theTime,format="%d/%m/%Y %H:%M:%S"
 globalActivePower <- as.numeric(as.character(datafordates$Global_active_power))
 
 ##Plots the time-series data
+png(filename = "Plot2.png") 
 plot(datafordates$theTime,globalActivePower,
      type = "l",
         xlab=" ",
         ylab="Global Active Power (kilowatts)")
 
-##Saves off the histogram to a PNG file
-dev.copy(png, file = "Plot1.png") 
 dev.off()
